@@ -1,0 +1,12 @@
+#!/bin/bash
+
+expr=$1
+
+if [ -z "$expr" ]; then
+  echo "Usage: mycal 2+3 | 4-2 | 3*5 | 8/2"
+  exit 1
+fi
+
+result=$(echo "scale=2; $expr" | bc)
+echo "Result: $result"
+
